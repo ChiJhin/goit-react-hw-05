@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import css from "./SearchBar.module.css";
 import { IoSearch } from "react-icons/io5";
-export const SearchBar = ({ handleSubmit }) => {
+export const SearchBar = ( {handleSubmit} ) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const query = e.target.query.value.trim().toLowerCase();
@@ -9,7 +9,7 @@ export const SearchBar = ({ handleSubmit }) => {
       toast.error("Please enter your search query");
       return;
     }
-    handleSubmit(query);
+   handleSubmit(query);
     e.target.reset();
   };
   return (
