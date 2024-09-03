@@ -29,6 +29,8 @@ const MovieReviews = () => {
   }, [id]);
   return (
     <>
+      
+      
       <ul className={css.list}>
         {reviews.length > 0 &&
           reviews.map((item) => {
@@ -39,6 +41,7 @@ const MovieReviews = () => {
             );
           })}
       </ul>
+     
       {reviews.length === 0 && !error && <p>No reviews</p>}
       {loader && <Loader />}
       {error && <ErrorMessage />}

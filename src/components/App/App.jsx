@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy} from "react";
 import { Route, Routes } from "react-router-dom";
 import { Loader } from "../Loader/Loader";
 const ReactAlarm = lazy(() => import("../ReactAlarm/ReactAlarm"));
@@ -11,7 +11,11 @@ const Home = lazy(() => import("../../pages/HomePage"));
 const Movies = lazy(() => import("../../pages/MoviesPage"));
 const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage"));
 const NavBar = lazy(() => import("../NavBar/NavBar"));
+
+
+
 export const App = () => {
+  
   return (
     <>
       <NavBar />
@@ -21,6 +25,7 @@ export const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/movies/:id" element={<MovieDetailsPage />}>
+            
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>

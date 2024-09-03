@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { fetchInfo } from "../Api/fetchMovieApi";
 import { Loader } from "../Loader/Loader";
 import css from "./MovieCast.module.css";
@@ -29,6 +29,7 @@ const MovieCast = () => {
   }, [id]);
   return (
     <>
+      
       <ul className={css.list}>
         {cast.length > 0 &&
           cast.map((item) => {

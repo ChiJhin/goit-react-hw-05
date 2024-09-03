@@ -15,7 +15,7 @@ import clsx from "clsx";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 const MovieDetailsPage = () => {
   const { id } = useParams();
-  const [dataById, setDataByID] = useState({});
+  const [dataById, setDataByID] = useState('');
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const location = useLocation();
@@ -41,6 +41,8 @@ const MovieDetailsPage = () => {
     fetchDataById();
   }, [id]);
   return (
+    <>
+      {loader && <Loader />}
     <main>
       <Link to={backInLocation} className={css.linkArrow}>
         <FaArrowLeft className={css.icon} /> Назад
@@ -62,13 +64,14 @@ const MovieDetailsPage = () => {
           Відгуки
         </NavLink>
       </div>
-      <Suspense fallback={loader && <Loader />}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       
       
       {error && <ErrorMessage />}
-    </main>
+      </main>
+      </>
   );
 };
 

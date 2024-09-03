@@ -1,4 +1,4 @@
-import { MovieItem } from "../MovieItem/Movietem";
+import { MovieItem } from "../MovieItem/MovieItem";
 import css from "./MovieList.module.css";
 import { Link, useLocation } from "react-router-dom";
 export const MovieList = ({ dataMovie }) => {
